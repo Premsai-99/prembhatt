@@ -8,15 +8,14 @@
 <style>
 :root {
   --primary: #2563eb;
-  --secondary: #06b6d4;
-  --accent: #9333ea;
+  --secondary: #14b8a6;
+  --accent: #7c3aed;
   --dark: #0f172a;
-  --light: #f8fafc;
+  --bg: #f1f5f9;
 }
 
 * {
   box-sizing: border-box;
-  scroll-behavior: smooth;
 }
 
 body {
@@ -28,21 +27,20 @@ body {
 
 /* HEADER */
 header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
   background: linear-gradient(90deg, var(--dark), #1e293b);
   padding: 18px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 header h1 {
   margin: 0;
   font-size: 22px;
-  letter-spacing: 0.5px;
 }
 
 nav button {
@@ -60,7 +58,7 @@ nav button:hover {
   transform: translateY(-2px);
 }
 
-/* MAIN CONTAINER */
+/* MAIN */
 main {
   max-width: 1100px;
   margin: 50px auto;
@@ -68,15 +66,15 @@ main {
   padding: 50px;
   border-radius: 16px;
   box-shadow: 0 25px 50px rgba(0,0,0,0.12);
-  animation: fadeIn 1s ease;
 }
 
-section {
+/* SECTIONS */
+.section {
   display: none;
-  animation: slideUp 0.6s ease;
+  animation: fadeSlide 0.6s ease;
 }
 
-section.active {
+.section.active {
   display: block;
 }
 
@@ -89,7 +87,7 @@ h2 {
 
 /* CARDS */
 .card {
-  background: linear-gradient(135deg, #f1f5f9, #ffffff);
+  background: linear-gradient(135deg, #f8fafc, #ffffff);
   border-left: 5px solid var(--accent);
   padding: 20px;
   margin-top: 20px;
@@ -98,13 +96,12 @@ h2 {
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
 .title {
   font-weight: bold;
-  font-size: 16px;
 }
 
 .subtitle {
@@ -138,7 +135,6 @@ li {
 
 .button:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
 }
 
 /* FOOTER */
@@ -149,16 +145,11 @@ footer {
   color: #475569;
 }
 
-/* ANIMATIONS */
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
-@keyframes slideUp {
+/* ANIMATION */
+@keyframes fadeSlide {
   from {
     opacity: 0;
-    transform: translateY(25px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -180,7 +171,8 @@ footer {
 
 <script>
 function showSection(id) {
-  document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
+  const sections = document.querySelectorAll(".section");
+  sections.forEach(section => section.classList.remove("active"));
   document.getElementById(id).classList.add("active");
 }
 </script>
@@ -202,34 +194,32 @@ function showSection(id) {
 
 <main>
 
-<section id="home" class="active">
+<section id="home" class="section active">
   <h2>MBA – Operations & Analytics</h2>
   <p>
     Operations and analytics professional with experience in manufacturing,
-    shop-floor coordination, dashboards, and vendor management.
+    dashboards, shop-floor coordination, and vendor management.
   </p>
-  <a class="button" href="#contact" onclick="showSection('contact')">Hire Me</a>
 </section>
 
-<section id="summary">
+<section id="summary" class="section">
   <h2>Professional Summary</h2>
   <p>
     MBA student specializing in Operations Management with internship experience
     at Volvo Construction Equipment and prior experience at CARS24.
-    Strong interest in operations excellence, supply chain, and consulting.
   </p>
 </section>
 
-<section id="experience">
+<section id="experience" class="section">
   <h2>Experience</h2>
 
   <div class="card">
     <div class="title">Volvo Construction Equipment – Project Management Trainee</div>
     <div class="subtitle">May 2025 – July 2025 | Bangalore</div>
     <ul>
-      <li>Created EHS, Quality, Cost, Delivery dashboards</li>
-      <li>Tracked consumables across 4 assembly lines</li>
-      <li>Supported shop-floor tool monitoring</li>
+      <li>Built dashboards for EHS, Quality, Cost, Delivery</li>
+      <li>Tracked consumables across four assembly lines</li>
+      <li>Supported shop-floor process monitoring</li>
     </ul>
   </div>
 
@@ -237,14 +227,14 @@ function showSection(id) {
     <div class="title">CARS24 – Junior Coordinator</div>
     <div class="subtitle">Sept 2023 – May 2024 | Rajkot</div>
     <ul>
-      <li>Vehicle inspections & reports</li>
+      <li>Prepared vehicle inspection reports</li>
       <li>Vendor negotiation & coordination</li>
-      <li>Managed teams for daily operations</li>
+      <li>Managed daily operational teams</li>
     </ul>
   </div>
 </section>
 
-<section id="education">
+<section id="education" class="section">
   <h2>Education</h2>
   <ul>
     <li>MBA Operations & Analytics – SSSIHL (2024–2026)</li>
@@ -253,7 +243,7 @@ function showSection(id) {
   </ul>
 </section>
 
-<section id="skills">
+<section id="skills" class="section">
   <h2>Skills</h2>
   <ul>
     <li>Team Coordination</li>
@@ -266,13 +256,11 @@ function showSection(id) {
   </ul>
 </section>
 
-<section id="contact">
+<section id="contact" class="section">
   <h2>Contact</h2>
   <p>📧 premsaianand99@gmail.com</p>
   <p>📞 7043356770</p>
   <a class="button" href="mailto:premsaianand99@gmail.com">Email Me</a>
-  <br><br>
-  <a class="button" href="https://www.linkedin.com/in/prem-bhatt-96a6ba325/" target="_blank">LinkedIn</a>
 </section>
 
 </main>
