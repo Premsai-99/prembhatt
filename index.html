@@ -1,135 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- SEO META TAGS -->
+  <!-- SEO META -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="title" content="Prem Bhatt | Operations & Analytics Professional">
-  <meta name="description" content="MBA Operations & Analytics professional with experience at Volvo Construction Equipment and CARS24. Skilled in operations, analytics, supply chain, and process improvement.">
-  <meta name="keywords" content="Prem Bhatt, Operations Management, Analytics, MBA, Supply Chain, Volvo, CARS24">
+  <meta name="description" content="MBA Operations & Analytics professional with experience at Volvo Construction Equipment and CARS24.">
+  <meta name="keywords" content="Prem Bhatt, Operations Management, Analytics, MBA, Supply Chain">
   <meta name="author" content="Prem Bhatt">
 
   <title>Prem Bhatt | Operations & Analytics</title>
 
   <style>
     :root {
-      --primary: #0f766e;
-      --dark: #0f172a;
-      --light: #f8fafc;
-      --gray: #475569;
+      --primary: #1e3a8a;
+      --secondary: #0f766e;
+      --text: #1f2933;
+      --muted: #475569;
+      --bg: #f8fafc;
       --border: #e5e7eb;
-    }
-
-    * {
-      box-sizing: border-box;
     }
 
     body {
       margin: 0;
       font-family: "Segoe UI", Arial, sans-serif;
-      background-color: var(--light);
-      color: #1f2933;
+      background-color: var(--bg);
+      color: var(--text);
       line-height: 1.7;
     }
 
-    /* HEADER */
     header {
       background: white;
       border-bottom: 1px solid var(--border);
-      padding: 16px 32px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      padding: 18px 40px;
       position: sticky;
       top: 0;
-      z-index: 100;
     }
 
     header h1 {
-      font-size: 20px;
       margin: 0;
-      color: var(--dark);
+      font-size: 22px;
+      color: var(--primary);
+    }
+
+    header p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 14px;
     }
 
     nav {
-      display: flex;
-      align-items: center;
+      margin-top: 12px;
     }
 
-    nav button {
-      background: none;
-      border: none;
-      margin-left: 20px;
+    nav a {
+      margin-right: 18px;
+      text-decoration: none;
+      color: var(--muted);
       font-size: 14px;
-      color: var(--gray);
-      cursor: pointer;
-      padding-bottom: 4px;
+      font-weight: 500;
     }
 
-    nav button.active {
-      color: var(--primary);
-      border-bottom: 2px solid var(--primary);
-      font-weight: 600;
-    }
-
-    nav button:hover {
+    nav a:hover {
       color: var(--primary);
     }
 
-    /* MOBILE MENU */
-    .menu-toggle {
-      display: none;
-      font-size: 22px;
-      cursor: pointer;
-    }
-
-    /* MAIN */
     main {
       max-width: 1100px;
       margin: 40px auto;
       background: white;
       padding: 50px;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      border-radius: 8px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
     }
 
     section {
-      display: none;
-      animation: fadeIn 0.4s ease;
-    }
-
-    section.active {
-      display: block;
+      margin-bottom: 50px;
     }
 
     h2 {
       color: var(--primary);
       border-bottom: 2px solid var(--border);
       padding-bottom: 6px;
-      display: inline-block;
+      margin-bottom: 20px;
     }
 
-    /* CARDS */
-    .card {
-      border-left: 4px solid var(--primary);
-      padding: 16px 20px;
-      margin-top: 20px;
-      background: #f9fafb;
-      border-radius: 8px;
+    .job {
+      margin-bottom: 25px;
     }
 
-    .title {
+    .job-title {
       font-weight: 600;
+      color: var(--text);
     }
 
-    .subtitle {
+    .job-meta {
       font-size: 13px;
-      color: var(--gray);
+      color: var(--muted);
       margin-bottom: 8px;
     }
 
     ul {
-      columns: 2;
       padding-left: 20px;
     }
 
@@ -137,12 +108,23 @@
       margin-bottom: 8px;
     }
 
-    /* BUTTONS */
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .skill-box {
+      background: #f1f5f9;
+      padding: 12px 14px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
     .btn {
       display: inline-block;
-      margin-top: 20px;
       padding: 12px 20px;
-      background: var(--primary);
+      background: var(--secondary);
       color: white;
       text-decoration: none;
       border-radius: 6px;
@@ -156,120 +138,73 @@
     footer {
       text-align: center;
       padding: 20px;
-      color: var(--gray);
+      color: var(--muted);
       font-size: 14px;
     }
 
-    /* ANIMATION */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    /* MOBILE */
     @media (max-width: 768px) {
-      nav {
-        display: none;
-        flex-direction: column;
-        background: white;
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        border: 1px solid var(--border);
-        padding: 10px;
-        border-radius: 8px;
+      header {
+        padding: 16px 20px;
       }
 
-      nav.show {
-        display: flex;
+      main {
+        padding: 30px 20px;
       }
 
-      nav button {
-        margin: 10px 0;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      ul {
-        columns: 1;
+      nav a {
+        display: inline-block;
+        margin-bottom: 8px;
       }
     }
   </style>
-
-  <script>
-    function showSection(id, btn) {
-      document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
-      document.getElementById(id).classList.add("active");
-
-      document.querySelectorAll("nav button").forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-
-      document.querySelector("nav").classList.remove("show");
-    }
-
-    function toggleMenu() {
-      document.querySelector("nav").classList.toggle("show");
-    }
-  </script>
 </head>
 
 <body>
 
 <header>
   <h1>Prem Bhatt</h1>
-  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <p>MBA – Operations & Analytics</p>
   <nav>
-    <button class="active" onclick="showSection('home', this)">Home</button>
-    <button onclick="showSection('summary', this)">Summary</button>
-    <button onclick="showSection('experience', this)">Experience</button>
-    <button onclick="showSection('education', this)">Education</button>
-    <button onclick="showSection('skills', this)">Skills</button>
-    <button onclick="showSection('contact', this)">Contact</button>
+    <a href="#summary">Summary</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
   </nav>
 </header>
 
 <main>
 
-<section id="home" class="active">
-  <h2>Operations & Analytics Professional</h2>
-  <p>
-    MBA Operations & Analytics professional with hands-on experience in
-    manufacturing operations, dashboards, vendor management, and process improvement.
-  </p>
-  <a class="btn" href="Prem_Bhatt_Resume.pdf" download>Download Resume</a>
-</section>
-
 <section id="summary">
   <h2>Professional Summary</h2>
   <p>
-    MBA student specializing in Operations Management with internship experience
-    at Volvo Construction Equipment and prior experience at CARS24.
-    Interested in operations excellence, supply chain, and consulting roles.
+    MBA student specializing in Operations Management and Analytics with hands-on
+    experience at Volvo Construction Equipment and prior operational experience at CARS24.
+    Interested in operations, supply chain, and business consulting roles.
   </p>
+  <a class="btn" href="Prem_Bhatt_Resume.pdf" download>Download Resume (PDF)</a>
 </section>
 
 <section id="experience">
-  <h2>Experience</h2>
+  <h2>Work Experience</h2>
 
-  <div class="card">
-    <div class="title">Volvo Construction Equipment – Project Management Trainee</div>
-    <div class="subtitle">May 2025 – July 2025 | Bangalore</div>
+  <div class="job">
+    <div class="job-title">Project Management Trainee – Volvo Construction Equipment</div>
+    <div class="job-meta">May 2025 – July 2025 | Bangalore</div>
     <ul>
-      <li>Created dashboards for EHS, Quality, Cost, Delivery</li>
-      <li>Tracked tools and consumables across assembly lines</li>
+      <li>Created dashboards for EHS, Quality, Cost, Delivery, and People metrics</li>
+      <li>Tracked tools and consumables across four assembly lines</li>
       <li>Supported shop-floor operations and reporting</li>
     </ul>
   </div>
 
-  <div class="card">
-    <div class="title">CARS24 – Junior Coordinator</div>
-    <div class="subtitle">Sept 2023 – May 2024 | Rajkot</div>
+  <div class="job">
+    <div class="job-title">Junior Coordinator – CARS24</div>
+    <div class="job-meta">Sept 2023 – May 2024 | Rajkot</div>
     <ul>
-      <li>Prepared car inspection reports</li>
-      <li>Vendor negotiation and coordination</li>
-      <li>Managed daily operational execution</li>
+      <li>Prepared detailed car inspection reports</li>
+      <li>Negotiated with vendors for parts and services</li>
+      <li>Managed teams to ensure smooth daily operations</li>
     </ul>
   </div>
 </section>
@@ -277,7 +212,7 @@
 <section id="education">
   <h2>Education</h2>
   <ul>
-    <li>MBA Operations & Analytics – SSSIHL (2024–2026)</li>
+    <li>MBA Operations & Analytics – Sri Sathya Sai Institute of Higher Learning (2024–2026)</li>
     <li>B.E Automobile Engineering – GTU (2021–2024)</li>
     <li>Diploma Automobile Engineering – GTU (2017–2020)</li>
   </ul>
@@ -285,28 +220,30 @@
 
 <section id="skills">
   <h2>Skills</h2>
-  <ul>
-    <li>Team Coordination</li>
-    <li>Vendor Negotiation</li>
-    <li>Power BI</li>
-    <li>SAP S/4HANA</li>
-    <li>ERP (TCS ion)</li>
-    <li>SQL & Python (Beginner)</li>
-    <li>GIS (Beginner)</li>
-  </ul>
+  <div class="skills">
+    <div class="skill-box">Team Coordination</div>
+    <div class="skill-box">Vendor Negotiation</div>
+    <div class="skill-box">Power BI</div>
+    <div class="skill-box">SAP S/4HANA</div>
+    <div class="skill-box">ERP (TCS ion)</div>
+    <div class="skill-box">SQL & Python (Beginner)</div>
+    <div class="skill-box">GIS (Beginner)</div>
+  </div>
 </section>
 
 <section id="contact">
   <h2>Contact</h2>
-  <p>📧 premsaianand99@gmail.com</p>
-  <p>📞 7043356770</p>
-  <a class="btn" href="mailto:premsaianand99@gmail.com">Email Me</a>
+  <p>📧 <strong>Email:</strong> premsaianand99@gmail.com</p>
+  <p>📞 <strong>Phone:</strong> 7043356770</p>
+  <p>
+    <a class="btn" href="mailto:premsaianand99@gmail.com">Send Email</a>
+  </p>
 </section>
 
 </main>
 
 <footer>
-© 2025 Prem Bhatt | Operations & Analytics
+  © 2025 Prem Bhatt | Operations & Analytics
 </footer>
 
 </body>
