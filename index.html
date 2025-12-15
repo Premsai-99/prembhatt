@@ -1,225 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prem Bhatt | Operations & Analytics</title>
+  <!-- SEO META TAGS -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="title" content="Prem Bhatt | Operations & Analytics Professional">
+  <meta name="description" content="MBA Operations & Analytics professional with experience at Volvo Construction Equipment and CARS24. Skilled in operations, analytics, supply chain, and process improvement.">
+  <meta name="keywords" content="Prem Bhatt, Operations Management, Analytics, MBA, Supply Chain, Volvo, CARS24">
+  <meta name="author" content="Prem Bhatt">
 
-<style>
-:root {
-  --primary: #2563eb;
-  --secondary: #14b8a6;
-  --accent: #7c3aed;
-  --dark: #0f172a;
-  --bg: #f1f5f9;
-}
+  <title>Prem Bhatt | Operations & Analytics</title>
 
-* {
-  box-sizing: border-box;
-}
+  <style>
+    :root {
+      --primary: #0f766e;
+      --dark: #0f172a;
+      --light: #f8fafc;
+      --gray: #475569;
+      --border: #e5e7eb;
+    }
 
-body {
-  margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: linear-gradient(135deg, #e0f2fe, #ede9fe);
-  color: #1f2933;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-/* HEADER */
-header {
-  background: linear-gradient(90deg, var(--dark), #1e293b);
-  padding: 18px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: white;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: var(--light);
+      color: #1f2933;
+      line-height: 1.7;
+    }
 
-header h1 {
-  margin: 0;
-  font-size: 22px;
-}
+    /* HEADER */
+    header {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      padding: 16px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-nav button {
-  background: none;
-  border: none;
-  color: #cbd5e1;
-  margin-left: 18px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: 0.3s;
-}
+    header h1 {
+      font-size: 20px;
+      margin: 0;
+      color: var(--dark);
+    }
 
-nav button:hover {
-  color: white;
-  transform: translateY(-2px);
-}
+    nav {
+      display: flex;
+      align-items: center;
+    }
 
-/* MAIN */
-main {
-  max-width: 1100px;
-  margin: 50px auto;
-  background: white;
-  padding: 50px;
-  border-radius: 16px;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.12);
-}
+    nav button {
+      background: none;
+      border: none;
+      margin-left: 20px;
+      font-size: 14px;
+      color: var(--gray);
+      cursor: pointer;
+      padding-bottom: 4px;
+    }
 
-/* SECTIONS */
-.section {
-  display: none;
-  animation: fadeSlide 0.6s ease;
-}
+    nav button.active {
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary);
+      font-weight: 600;
+    }
 
-.section.active {
-  display: block;
-}
+    nav button:hover {
+      color: var(--primary);
+    }
 
-h2 {
-  color: var(--primary);
-  border-bottom: 3px solid var(--secondary);
-  display: inline-block;
-  padding-bottom: 6px;
-}
+    /* MOBILE MENU */
+    .menu-toggle {
+      display: none;
+      font-size: 22px;
+      cursor: pointer;
+    }
 
-/* CARDS */
-.card {
-  background: linear-gradient(135deg, #f8fafc, #ffffff);
-  border-left: 5px solid var(--accent);
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 10px;
-  transition: 0.3s;
-}
+    /* MAIN */
+    main {
+      max-width: 1100px;
+      margin: 40px auto;
+      background: white;
+      padding: 50px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
 
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
+    section {
+      display: none;
+      animation: fadeIn 0.4s ease;
+    }
 
-.title {
-  font-weight: bold;
-}
+    section.active {
+      display: block;
+    }
 
-.subtitle {
-  font-size: 13px;
-  color: #475569;
-  margin-bottom: 10px;
-}
+    h2 {
+      color: var(--primary);
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 6px;
+      display: inline-block;
+    }
 
-/* LISTS */
-ul {
-  columns: 2;
-  padding-left: 20px;
-}
+    /* CARDS */
+    .card {
+      border-left: 4px solid var(--primary);
+      padding: 16px 20px;
+      margin-top: 20px;
+      background: #f9fafb;
+      border-radius: 8px;
+    }
 
-li {
-  margin-bottom: 8px;
-}
+    .title {
+      font-weight: 600;
+    }
 
-/* BUTTONS */
-.button {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 22px;
-  background: linear-gradient(90deg, var(--primary), var(--accent));
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 500;
-  transition: 0.3s;
-}
+    .subtitle {
+      font-size: 13px;
+      color: var(--gray);
+      margin-bottom: 8px;
+    }
 
-.button:hover {
-  transform: scale(1.05);
-}
+    ul {
+      columns: 2;
+      padding-left: 20px;
+    }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 25px;
-  font-size: 14px;
-  color: #475569;
-}
+    li {
+      margin-bottom: 8px;
+    }
 
-/* ANIMATION */
-@keyframes fadeSlide {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+    /* BUTTONS */
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 20px;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 500;
+    }
 
-/* MOBILE */
-@media (max-width: 768px) {
-  ul {
-    columns: 1;
-  }
-  header {
-    flex-direction: column;
-    gap: 10px;
-  }
-}
-</style>
+    .btn:hover {
+      opacity: 0.9;
+    }
 
-<script>
-function showSection(id) {
-  const sections = document.querySelectorAll(".section");
-  sections.forEach(section => section.classList.remove("active"));
-  document.getElementById(id).classList.add("active");
-}
-</script>
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    /* ANIMATION */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: white;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        border: 1px solid var(--border);
+        padding: 10px;
+        border-radius: 8px;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      nav button {
+        margin: 10px 0;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      ul {
+        columns: 1;
+      }
+    }
+  </style>
+
+  <script>
+    function showSection(id, btn) {
+      document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+
+      document.querySelectorAll("nav button").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      document.querySelector("nav").classList.remove("show");
+    }
+
+    function toggleMenu() {
+      document.querySelector("nav").classList.toggle("show");
+    }
+  </script>
 </head>
 
 <body>
 
 <header>
   <h1>Prem Bhatt</h1>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
   <nav>
-    <button onclick="showSection('home')">Home</button>
-    <button onclick="showSection('summary')">Summary</button>
-    <button onclick="showSection('experience')">Experience</button>
-    <button onclick="showSection('education')">Education</button>
-    <button onclick="showSection('skills')">Skills</button>
-    <button onclick="showSection('contact')">Contact</button>
+    <button class="active" onclick="showSection('home', this)">Home</button>
+    <button onclick="showSection('summary', this)">Summary</button>
+    <button onclick="showSection('experience', this)">Experience</button>
+    <button onclick="showSection('education', this)">Education</button>
+    <button onclick="showSection('skills', this)">Skills</button>
+    <button onclick="showSection('contact', this)">Contact</button>
   </nav>
 </header>
 
 <main>
 
-<section id="home" class="section active">
-  <h2>MBA – Operations & Analytics</h2>
+<section id="home" class="active">
+  <h2>Operations & Analytics Professional</h2>
   <p>
-    Operations and analytics professional with experience in manufacturing,
-    dashboards, shop-floor coordination, and vendor management.
+    MBA Operations & Analytics professional with hands-on experience in
+    manufacturing operations, dashboards, vendor management, and process improvement.
   </p>
+  <a class="btn" href="Prem_Bhatt_Resume.pdf" download>Download Resume</a>
 </section>
 
-<section id="summary" class="section">
+<section id="summary">
   <h2>Professional Summary</h2>
   <p>
     MBA student specializing in Operations Management with internship experience
     at Volvo Construction Equipment and prior experience at CARS24.
+    Interested in operations excellence, supply chain, and consulting roles.
   </p>
 </section>
 
-<section id="experience" class="section">
+<section id="experience">
   <h2>Experience</h2>
 
   <div class="card">
     <div class="title">Volvo Construction Equipment – Project Management Trainee</div>
     <div class="subtitle">May 2025 – July 2025 | Bangalore</div>
     <ul>
-      <li>Built dashboards for EHS, Quality, Cost, Delivery</li>
-      <li>Tracked consumables across four assembly lines</li>
-      <li>Supported shop-floor process monitoring</li>
+      <li>Created dashboards for EHS, Quality, Cost, Delivery</li>
+      <li>Tracked tools and consumables across assembly lines</li>
+      <li>Supported shop-floor operations and reporting</li>
     </ul>
   </div>
 
@@ -227,14 +267,14 @@ function showSection(id) {
     <div class="title">CARS24 – Junior Coordinator</div>
     <div class="subtitle">Sept 2023 – May 2024 | Rajkot</div>
     <ul>
-      <li>Prepared vehicle inspection reports</li>
-      <li>Vendor negotiation & coordination</li>
-      <li>Managed daily operational teams</li>
+      <li>Prepared car inspection reports</li>
+      <li>Vendor negotiation and coordination</li>
+      <li>Managed daily operational execution</li>
     </ul>
   </div>
 </section>
 
-<section id="education" class="section">
+<section id="education">
   <h2>Education</h2>
   <ul>
     <li>MBA Operations & Analytics – SSSIHL (2024–2026)</li>
@@ -243,7 +283,7 @@ function showSection(id) {
   </ul>
 </section>
 
-<section id="skills" class="section">
+<section id="skills">
   <h2>Skills</h2>
   <ul>
     <li>Team Coordination</li>
@@ -256,11 +296,11 @@ function showSection(id) {
   </ul>
 </section>
 
-<section id="contact" class="section">
+<section id="contact">
   <h2>Contact</h2>
   <p>📧 premsaianand99@gmail.com</p>
   <p>📞 7043356770</p>
-  <a class="button" href="mailto:premsaianand99@gmail.com">Email Me</a>
+  <a class="btn" href="mailto:premsaianand99@gmail.com">Email Me</a>
 </section>
 
 </main>
